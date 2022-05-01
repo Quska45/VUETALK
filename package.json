@@ -1,0 +1,22 @@
+{
+  "name": "pastoral-cookie-moan-8ela5",
+  "productName": "pastoral-cookie-moan-8ela5",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "SEHYUNICT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "vue": "*",
+    "vue-router": "*",
+    "webpack": "*",
+    "webpack-cli": "*",
+    "vue-loader": "*"
+  },
+  "devDependencies": {
+    "electron": "18.0.3"
+  }
+}
