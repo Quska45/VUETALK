@@ -1,16 +1,19 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, Menu, Tray } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
-import express from 'express';
+import VueTalkTray from './backend/Tray.js';
+import { logger } from './backend/Logger/Logger.js';
+
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
+import VueSocket from './backend/Socket/index.js';
 
 async function createWindow() {
   // Create the browser window.
@@ -35,17 +38,8 @@ async function createWindow() {
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
-
-  const server = require('http').createServer(express());
-  const io = require('socket.io')(server, {
-    cors: {
-      origin: "*",
-      methods: ["GET", "POST"]
-    }
-  });
-  io.on('connection', () => { /* … */ });
-  console.log("서버 시작");
-  server.listen(3000);
+  
+  VueSocket.initSocket();
 }
 
 // Quit when all windows are closed.
@@ -76,6 +70,7 @@ app.on('ready', async () => {
     }
   }
   createWindow()
+  VueTalkTray.initTrayIconMenu( Menu, Tray );
 })
 
 // Exit cleanly on request from parent process in development mode.
