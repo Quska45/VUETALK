@@ -5,9 +5,8 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
-import VueTalkTray from './backend/Tray.js';
+import VueTalkTray from './backend/Electron/Tray.js';
 import { logger } from './backend/Logger/Logger.js';
-
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
@@ -15,13 +14,19 @@ protocol.registerSchemesAsPrivileged([
 ])
 import VueSocket from './backend/Socket/index.js';
 
+// 일단은 이렇게 에러 처리하고 나중에 익셉셥 커리 클래스 만드는 걸로 하자.
+process.on('uncaughtException', function (error) {
+  // Handle the error
+  console.log(error);
+});
+
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      
+
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
@@ -38,7 +43,7 @@ async function createWindow() {
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
-  
+
   VueSocket.initSocket();
 }
 
