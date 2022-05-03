@@ -1,7 +1,6 @@
-import { logger } from '../Logger/Logger.js'
+import { logger } from '../Logger/Logger.js';
 
 export default class VueTalkSocket{
-  static port = 1024;
   constructor( http, express, socket ){
     this.http = http;
     this.express = express;
@@ -10,10 +9,18 @@ export default class VueTalkSocket{
     this.io = null;
   };
 
+  static port = 1024;
+  static socketOption = {
+    cors: {
+      origin: "*",
+      methods: ["GET", "POST"]
+    }
+  };
+
   initServer(){
     this.server = this.http.createServer( this.express() );
-    this.server.listen(this.port, function(){
-      logger.debug( `localhost:${this.port} listen` );
+    this.server.listen(VueTalkSocket.port, function(){
+      logger.info( `localhost:${VueTalkSocket.port} listen` );
     })
 
     return this.server;
@@ -25,7 +32,8 @@ export default class VueTalkSocket{
       return false;
     };
 
-    this.io = this.socket( this.server )
+    this.io = this.socket( this.server, VueTalkSocket.socketOption );
+    this.io.on('connection', () => { logger.info('io connet 됨'); });
 
     return this.io;
   };

@@ -7,14 +7,14 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 
 import VueTalkTray from './backend/Electron/Tray.js';
 import { logger } from './backend/Logger/Logger.js';
+import SocketManager from './backend/Socket/SocketManager';
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
-import VueSocket from './backend/Socket/index.js';
 
-// 일단은 이렇게 에러 처리하고 나중에 익셉셥 커리 클래스 만드는 걸로 하자.
+// 일단은 이렇게 에러 처리하고 나중에 익셉셥 처리 클래스 만드는 걸로 하자.
 process.on('uncaughtException', function (error) {
   // Handle the error
   console.log(error);
@@ -44,7 +44,7 @@ async function createWindow() {
     win.loadURL('app://./index.html')
   }
 
-  VueSocket.initSocket();
+  SocketManager.initSocket();
 }
 
 // Quit when all windows are closed.

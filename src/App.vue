@@ -31,7 +31,7 @@ export default {
     testClick: function(){
       console.log(this.testInput);
       try{
-        const socket = io(`http://${this.testInput}:3000`, socketOption);
+        const socket = io(`http://${this.testInput}:1024`, socketOption);
         socket.on('connect', function(){alert(123)});
       } catch( e ){
         console.log(e);
