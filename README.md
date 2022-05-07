@@ -20,5 +20,8 @@ npm run build
 npm run lint
 ```
 
+### Test code 실행
+npm test 파일명
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

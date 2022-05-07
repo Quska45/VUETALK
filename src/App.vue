@@ -12,9 +12,9 @@ import MainLayout from './components/mainLayout/MainLayout.vue';
 import SideLayout from './components/sideLayout/SideLayout.vue'
 
 import io from 'socket.io-client';
-const socketOption = {
-  cors: { origin: '*' }
-};
+// const socketOption = {
+//   cors: { origin: '*' }
+// };
 
 export default {
   name: 'App',
@@ -31,7 +31,7 @@ export default {
     testClick: function(){
       console.log(this.testInput);
       try{
-        const socket = io(`http://${this.testInput}:1024`, socketOption);
+        const socket = io(`http://${this.testInput}:8087`);
         socket.on('connect', function(){alert(123)});
       } catch( e ){
         console.log(e);
