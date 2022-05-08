@@ -16,6 +16,8 @@ export default {
     ]
   },
 
+  ssr: false,
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -29,13 +31,22 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
+  // 순서대로 실행 되기 때문에 순서에 대해서 잘 고려되어야 할 필요가 있다.
   modules: [
+    'nuxt-buefy'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  fontawesome: {
+    icons: {
+      solid: true,
+      brands: true
+    }
   }
 }
