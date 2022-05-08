@@ -3,13 +3,8 @@
   </div>
 </template>
 <script>
-import VueTalkBaseContainer from "./VueTalkBaseContainer";
 
 export default {
-  extends: VueTalkBaseContainer,
-  data () {　
-    return {　name : 'Sub'}　
-  },
 }
 </script>
 <style>

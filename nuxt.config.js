@@ -1,3 +1,5 @@
+import * as FontAwesome from './icon/fontawesome'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -31,9 +33,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/fontawesome'
   ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   // 순서대로 실행 되기 때문에 순서에 대해서 잘 고려되어야 할 필요가 있다.
   modules: [
@@ -42,11 +42,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  },
-  fontawesome: {
-    icons: {
-      solid: true,
-      brands: true
-    }
   }
 }

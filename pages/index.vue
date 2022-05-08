@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <left-nav></left-nav>
     <main-container></main-container>
-  </div>
-        
 </template>
 
 <script>
@@ -14,4 +10,8 @@ export default {
 </script>
 
 <style>
+  html,body, #__nuxt, #__layout, #index-container{
+    height:100%!important;
+    width: 100%!important;
+  }
 </style>
