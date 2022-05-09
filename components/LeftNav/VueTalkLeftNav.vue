@@ -2,12 +2,8 @@
   <div class="sidebar-page">
     <section class="sidebar-layout">
       <b-sidebar
-        position="static"
         :mobile="mobile"
-        :expand-on-hover="expandOnHover"
         :reduce="reduce"
-        :delay="expandWithDelay ? 500 : null"
-        type="is-light"
         open
         :fullheight=true
       >
@@ -18,25 +14,18 @@
               alt="Lightweight UI components for Vue.js based on Bulma"
             />
           </div>
-          <b-menu class="is-custom-mobile">
-            <b-menu-list label="Menu">
-              <b-menu-item icon="information-outline">
-                <nuxt-link to="/">123</nuxt-link>
-                <nuxt-link to="/test">345</nuxt-link>
-              </b-menu-item>
-              <b-menu-item active expanded icon="cog-outline">
-              </b-menu-item>
-              <b-menu-item icon="account">
 
-              </b-menu-item>
-            </b-menu-list>
-          </b-menu>
+          <vue-talk-left-nav-item></vue-talk-left-nav-item>
+          <vue-talk-left-nav-item :url="'test'" :urlNm="'test'"></vue-talk-left-nav-item>
+
         </div>
       </b-sidebar>
     </section>
   </div>
 </template>
 <script>
+import VueTalkLeftNavItem from "./VueTalkLeftNavItem";
+
 export default {
     name: 'VueTalkLeftNav',
     data() {
@@ -46,6 +35,9 @@ export default {
         mobile: "reduce",
         reduce: true
       };
+    },
+    components: {
+      VueTalkLeftNavItem
     }
 }
 </script>

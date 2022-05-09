@@ -1,11 +1,16 @@
 <template>
-    <main-container></main-container>
+    <vue-talk-main-container></vue-talk-main-container>
 </template>
 
 <script>
+import VueTalkMainContainer from '../components/MainContainer/VueTalkMainContainer';
 
+import VueTalkBaseContainer from '../components/MainContainer/VueTalkBaseContainer';
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  components: {
+    VueTalkMainContainer
+  }
 }
 </script>
 

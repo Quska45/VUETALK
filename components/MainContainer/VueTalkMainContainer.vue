@@ -6,10 +6,8 @@
 import VueTalkBaseContainer from "./VueTalkBaseContainer";
 
 export default {
+  name: 'VueTalkMainContainer',
   extends: VueTalkBaseContainer,
-  data () {　
-    return {　name : 'Sub'}　
-  },
 }
 </script>
 <style>

@@ -1,13 +1,15 @@
 <template>
-  <nuxt-link to="/">asdfjhaskdjhlkashgk</nuxt-link>
+  <vue-talk-main-container></vue-talk-main-container>
 </template>
 
 <script>
 
-import VueTalkLeftNav from "../components/LeftNav/VueTalkLeftNav";
+import VueTalkMainContainer from "../components/MainContainer/VueTalkMainContainer";
 export default {
   name: 'IndexPage',
-  components: {VueTalkLeftNav}
+  components: {
+    VueTalkMainContainer
+  }
 }
 </script>
 
