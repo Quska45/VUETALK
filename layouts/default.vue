@@ -13,8 +13,9 @@ export default {
 </script>
 
 <style>
-  #layout-container {
-    height: calc(100%);
+  html,body, #__nuxt, #__layout, #layout-container{
+    height:100%!important;
+    width: 100%!important;
   }
 </style>
 

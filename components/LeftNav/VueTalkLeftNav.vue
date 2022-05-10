@@ -42,6 +42,9 @@ export default {
 }
 </script>
 <style lang="scss">
+a {
+  color: #4a4a4a;
+}
 .p-1 {
   padding: 1em;
 }
@@ -52,12 +55,12 @@ export default {
   min-height: 100%;
   height: 100%;
 // min-height: 100vh;
-.sidebar-layout {
-  display: flex;
-  flex-direction: row;
-  min-height: 100%;
-// min-height: 100vh;
-}
+  .sidebar-layout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
+  // min-height: 100vh;
+  }
 }
 @media screen and (max-width: 1023px) {
   .p-1 {
