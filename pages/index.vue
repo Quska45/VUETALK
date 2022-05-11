@@ -5,7 +5,6 @@
 <script>
 import VueTalkMainContainer from '../components/MainContainer/VueTalkMainContainer';
 
-import VueTalkBaseContainer from '../components/MainContainer/VueTalkBaseContainer';
 export default {
   name: 'IndexPage',
   components: {

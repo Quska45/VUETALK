@@ -6,7 +6,7 @@
 
 import VueTalkMainContainer from "../components/MainContainer/VueTalkMainContainer";
 export default {
-  name: 'IndexPage',
+  name: 'UsersPage',
   components: {
     VueTalkMainContainer
   }

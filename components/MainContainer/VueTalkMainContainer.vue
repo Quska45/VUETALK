@@ -3,13 +3,18 @@
   </div>
 </template>
 <script>
-import VueTalkBaseContainer from "./VueTalkBaseContainer";
 
 export default {
-  name: 'VueTalkMainContainer',
-  extends: VueTalkBaseContainer,
+  name: 'VueTalkMainContainer'
 }
 </script>
 <style>
-
+  .container {
+    position: absolute;
+    top: 0;
+    left: 95px;
+    width: calc(100% - 95px)!important;
+    height: 100%;
+    background-color: antiquewhite;
+  }
 </style>

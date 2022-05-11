@@ -15,8 +15,8 @@
             />
           </div>
 
-          <vue-talk-left-nav-item></vue-talk-left-nav-item>
-          <vue-talk-left-nav-item :url="'test'" :urlNm="'test'"></vue-talk-left-nav-item>
+          <vue-talk-left-nav-item v-for="menu in menus" :url="menu.url" :is-active="menu.isActive" :icon="menu.icon" @select-nav-item="selectNavItem">
+          </vue-talk-left-nav-item>
 
         </div>
       </b-sidebar>
@@ -25,6 +25,7 @@
 </template>
 <script>
 import VueTalkLeftNavItem from "./VueTalkLeftNavItem";
+import { vueTalkLeftNavPropsMethods } from "./js/VueTalkLeftNavPropsMethods";
 
 export default {
     name: 'VueTalkLeftNav',
@@ -33,11 +34,21 @@ export default {
         expandOnHover: false,
         expandWithDelay: false,
         mobile: "reduce",
-        reduce: true
+        reduce: true,
+        menus: [
+          { url: 'users', isActive: 'is-active', icon: 'account' },
+          { url: 'chattings', isActive: '', icon: 'chat' },
+          { url: 'settings', isActive: '', icon: 'cog-outline' }
+        ]
       };
     },
     components: {
       VueTalkLeftNavItem
+    },
+    methods: {
+      selectNavItem: function( url ){
+        vueTalkLeftNavPropsMethods.selectNavItem( this, url );
+      }
     }
 }
 </script>

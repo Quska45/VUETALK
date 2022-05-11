@@ -1,6 +1,8 @@
 <template>
-    <div class="left-nav-item" v-bind:class="isItemSelect" @click="clickItem">
-      <nuxt-link :to="`/${this.url}`">{{this.urlNm}}</nuxt-link>
+    <div class="left-nav-item" v-bind:class="`${this.isActive}`" @click="selectNavItem">
+      <nuxt-link :to="`/${this.url}`">
+        <i :class="`mdi mdi-${this.icon}`"></i>
+      </nuxt-link>
     </div>
 </template>
 <script>
@@ -17,15 +19,18 @@ export default {
       type: String,
       default: ""
     },
-    urlNm: {
+    isActive: {
       type: String,
-      default: "main"
+      default: ''
+    },
+    icon: {
+      type: String,
+      default: ''
     }
   },
   methods: {
-    clickItem: function(){
-      alert(this.count);
-      this.isItemSelect = this.isItemSelect === '' ? 'is-active' : '';
+    selectNavItem: function(){
+      this.$emit('select-nav-item', this.url)
     }
   }
 }
@@ -43,8 +48,8 @@ export default {
   }
   .is-active {
     background-color: #7957d5;
-    &:hover a {
-      color: whitesmoke;
+    i {
+      color: aliceblue;
     }
   }
 </style>
