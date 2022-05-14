@@ -15,7 +15,7 @@
             />
           </div>
 
-          <vue-talk-left-nav-item v-for="menu in menus" :url="menu.url" :is-active="menu.isActive" :icon="menu.icon" @select-nav-item="selectNavItem">
+          <vue-talk-left-nav-item v-for="menu in menus" :key="menu.url" :url="menu.url" :is-active="menu.isActive" :icon="menu.icon" @select-nav-item="selectNavItem">
           </vue-talk-left-nav-item>
 
         </div>
@@ -24,8 +24,9 @@
   </div>
 </template>
 <script>
-import VueTalkLeftNavItem from "./VueTalkLeftNavItem";
-import { vueTalkLeftNavPropsMethods } from "./js/VueTalkLeftNavPropsMethods";
+//import VueTalkLeftNavItem from "./VueTalkLeftNavItem";
+import VueTalkLeftNavItem from "@/components/LeftNav/VueTalkLeftNavItem";
+import { vueTalkLeftNavPropsMethods } from "@/components/LeftNav/js/VueTaklLeftNav/PropsMethods";
 
 export default {
     name: 'VueTalkLeftNav',

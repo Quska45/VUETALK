@@ -1,4 +1,4 @@
-import * as FontAwesome from './icon/fontawesome'
+import { resolve } from 'path';
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -42,5 +42,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  alias: {
+    '@': resolve( __dirname ),
+    '@LeftNav': resolve( __dirname, './components/LeftNav' ),
+    '@MainContainer': resolve( __dirname, './components/MainContainer' ),
   }
 }
