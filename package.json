@@ -17,6 +17,7 @@
     "@nuxtjs/fontawesome": "^1.1.2",
     "buefy": "^0.9.20",
     "core-js": "^3.19.3",
+    "express": "^4.18.1",
     "nuxt": "^2.15.8",
     "nuxt-alias": "^1.2.1",
     "nuxt-buefy": "^0.4.22",

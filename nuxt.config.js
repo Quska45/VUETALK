@@ -42,7 +42,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+
   },
+  serverMiddleware: [
+    // <project root>/api/index.js 모듈을 미들웨어로 추가
+    '~/api/index.js',
+  ],
   alias: {
     '@': resolve( __dirname ),
     '@LeftNav': resolve( __dirname, './components/LeftNav' ),
