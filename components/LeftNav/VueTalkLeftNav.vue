@@ -49,7 +49,21 @@ export default {
     methods: {
       selectNavItem: function( url ){
         vueTalkLeftNavPropsMethods.selectNavItem( this, url );
+      },
+      initMenus: function( menus ){
+        let url = window.location.href.split( "http://localhost:3000/" )[1].split( '/' )[0];
+
+        menus.forEach(function( menu ){
+          if( menu.url === url ){
+            menu.isActive = 'is-active';
+          } else {
+            menu.isActive = '';
+          }
+        });
       }
+    },
+    mounted() {
+      this.initMenus( this.menus );
     }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
-    <div class="left-nav-item" v-bind:class="`${this.isActive}`" @click="selectNavItem">
-      <nuxt-link :to="`/${this.url}`">
+    <div v-bind:class="isActive" @click="selectNavItem">
+      <nuxt-link class="left-nav-item" :to="`/${this.url}`">
         <i :class="`mdi mdi-${this.icon}`"></i>
       </nuxt-link>
     </div>
@@ -31,7 +31,7 @@ export default {
   methods: {
     selectNavItem: function(){
       this.$emit('select-nav-item', this.url)
-    }
+    },
   }
 }
 </script>
@@ -51,5 +51,9 @@ export default {
     i {
       color: aliceblue;
     }
+  }
+  .left-nav-item-link {
+    width: 100%;
+    height: 100%;
   }
 </style>
