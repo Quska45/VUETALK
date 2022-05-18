@@ -4,5 +4,4 @@ export class User {
     this.ip = ip;
     this.chats = [];
   }
-
 }

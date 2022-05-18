@@ -37,7 +37,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   // 순서대로 실행 되기 때문에 순서에 대해서 잘 고려되어야 할 필요가 있다.
   modules: [
-    'nuxt-buefy'
+    'nuxt-buefy',
+    '@nuxtjs/axios/'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
