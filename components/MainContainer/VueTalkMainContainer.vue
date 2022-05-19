@@ -1,16 +1,21 @@
 <template>
   <div class="container is-fluid">
-    <vue-talk-main-card v-for="cardTitle in cardTitles" :key="cardTitle" :cardTitle="cardTitle"></vue-talk-main-card>
+    <vue-talk-main-card></vue-talk-main-card>
+    <vue-talk-main-chat-card></vue-talk-main-chat-card>
   </div>
 </template>
 <script>
 import { mapMutations } from 'vuex';
-import VueTalkMainCard from "./VueTalkMainCard";
+import VueTalkMainCard from "./MainCard/VueTalkMainCard";
+import VueTalkMainChatCard from "./MainChatCard/VueTalkMainChatCard";
+import VueTalkTab from "./MainCard/VueTalkTab";
 
 export default {
   name: 'VueTalkMainContainer',
   components: {
-    VueTalkMainCard
+    VueTalkTab,
+    VueTalkMainCard,
+    VueTalkMainChatCard
   },
   methods: {
     ...mapMutations({

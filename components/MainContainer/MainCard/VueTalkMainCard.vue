@@ -1,9 +1,19 @@
 <template>
   <div class="card">
-    <article class="panel is-primary">
-      <vue-talk-card-head :cardTitle="cardTitle"></vue-talk-card-head>
-      <vue-talk-card-row></vue-talk-card-row>
-    </article>
+    <b-tabs v-model="activeTab">
+      <b-tab-item label="Pictures">
+        <article class="panel is-primary">
+          <vue-talk-card-head :cardTitle="cardTitle"></vue-talk-card-head>
+          <vue-talk-card-row></vue-talk-card-row>
+        </article>
+      </b-tab-item>
+      <b-tab-item label="Pictures">
+        <article class="panel is-primary">
+          <vue-talk-card-head :cardTitle="cardTitle"></vue-talk-card-head>
+          <vue-talk-card-row></vue-talk-card-row>
+        </article>
+      </b-tab-item>
+    </b-tabs>
   </div>
 </template>
 
@@ -17,6 +27,12 @@ export default {
     VueTalkCardRow,
     VueTalkCardHead
   },
+  data() {
+    return {
+      activeTab: 0,
+      showBooks: false
+    }
+  },
   props:{
     cardTitle: {
       type: String,
@@ -29,7 +45,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .card {
     width: 40%;
     height: 100%;
