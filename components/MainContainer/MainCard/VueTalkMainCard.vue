@@ -1,19 +1,13 @@
 <template>
   <div class="card">
-    <b-tabs v-model="activeTab">
-      <b-tab-item label="Pictures">
+
         <article class="panel is-primary">
           <vue-talk-card-head :cardTitle="cardTitle"></vue-talk-card-head>
           <vue-talk-card-row></vue-talk-card-row>
-        </article>
-      </b-tab-item>
-      <b-tab-item label="Pictures">
-        <article class="panel is-primary">
-          <vue-talk-card-head :cardTitle="cardTitle"></vue-talk-card-head>
+          <vue-talk-card-row></vue-talk-card-row>
           <vue-talk-card-row></vue-talk-card-row>
         </article>
-      </b-tab-item>
-    </b-tabs>
+
   </div>
 </template>
 

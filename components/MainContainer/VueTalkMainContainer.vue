@@ -8,12 +8,10 @@
 import { mapMutations } from 'vuex';
 import VueTalkMainCard from "./MainCard/VueTalkMainCard";
 import VueTalkMainChatCard from "./MainChatCard/VueTalkMainChatCard";
-import VueTalkTab from "./MainCard/VueTalkTab";
 
 export default {
   name: 'VueTalkMainContainer',
   components: {
-    VueTalkTab,
     VueTalkMainCard,
     VueTalkMainChatCard
   },

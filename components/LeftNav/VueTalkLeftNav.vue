@@ -49,6 +49,7 @@ export default {
     methods: {
       selectNavItem: function( url ){
         vueTalkLeftNavPropsMethods.selectNavItem( this, url );
+        console.log( this.$store.state.menus );
       },
       initMenus: function( menus ){
         let url = window.location.href.split( "http://localhost:3000/" )[1].split( '/' )[0];

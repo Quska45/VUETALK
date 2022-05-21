@@ -1,4 +1,7 @@
+// 데이터
 import { Users } from '../public/Data/Users';
+
+// 데이터 모델
 import { User } from '@/components/MainContainer/Data/User';
 import { Chat } from '@/components/MainContainer/Data/Chat';
 
