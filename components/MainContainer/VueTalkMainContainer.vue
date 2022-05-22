@@ -1,6 +1,7 @@
 <template>
   <div class="container is-fluid">
     <vue-talk-main-card></vue-talk-main-card>
+<!--    <vue-talk-main-card></vue-talk-main-card>-->
     <vue-talk-main-chat-card></vue-talk-main-chat-card>
   </div>
 </template>

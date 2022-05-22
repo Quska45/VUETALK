@@ -6,18 +6,18 @@
     </div>
 </template>
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   name: 'VueTalkLeftNav',
   data: function(){
     return {
-      isItemSelect: '',
-      count: this.$store.state.counter
     }
   },
   props: {
     url: {
       type: String,
-      default: ""
+      default: ''
     },
     isActive: {
       type: String,
@@ -29,8 +29,8 @@ export default {
     }
   },
   methods: {
-    selectNavItem: function(){
-      this.$emit('select-nav-item', this.url)
+    selectNavItem (){
+      this.$store.commit( 'menus/selectNavItem', this.url );
     },
   }
 }

@@ -1,13 +1,10 @@
 <template>
   <div class="card">
-
-        <article class="panel is-primary">
-          <vue-talk-card-head :cardTitle="cardTitle"></vue-talk-card-head>
-          <vue-talk-card-row></vue-talk-card-row>
-          <vue-talk-card-row></vue-talk-card-row>
-          <vue-talk-card-row></vue-talk-card-row>
-        </article>
-
+      <vue-talk-card-head></vue-talk-card-head>
+      <div class="card-container">
+        <vue-talk-card-row></vue-talk-card-row>
+        <vue-talk-card-row></vue-talk-card-row>
+      </div>
   </div>
 </template>
 
@@ -23,27 +20,21 @@ export default {
   },
   data() {
     return {
-      activeTab: 0,
-      showBooks: false
     }
   },
-  props:{
-    cardTitle: {
-      type: String,
-      default: "Title"
-    },
-  },
-  mounted() {
-
-  }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .card {
     width: 40%;
     height: 100%;
     display: inline-block;
     margin-left: 7%;
+  }
+  .card-container {
+    overflow-y: auto;
+    //height: 360px;
+    height: calc(100% - 55px);
   }
 </style>

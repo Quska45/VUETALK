@@ -14,5 +14,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .panel-block {
+    border-bottom: 1px solid #ededed;
+  }
 </style>

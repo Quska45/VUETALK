@@ -15,7 +15,7 @@
             />
           </div>
 
-          <vue-talk-left-nav-item v-for="menu in menus" :key="menu.url" :url="menu.url" :is-active="menu.isActive" :icon="menu.icon" @select-nav-item="selectNavItem">
+          <vue-talk-left-nav-item v-for="menu in menus" :key="menu.url" :url="menu.url" :is-active="menu.isActive" :icon="menu.icon">
           </vue-talk-left-nav-item>
 
         </div>
@@ -24,9 +24,8 @@
   </div>
 </template>
 <script>
-//import VueTalkLeftNavItem from "./VueTalkLeftNavItem";
 import VueTalkLeftNavItem from "@/components/LeftNav/VueTalkLeftNavItem";
-import { vueTalkLeftNavPropsMethods } from "@/components/LeftNav/js/VueTaklLeftNav/PropsMethods";
+import {mapMutations} from "vuex";
 
 export default {
     name: 'VueTalkLeftNav',
@@ -36,36 +35,21 @@ export default {
         expandWithDelay: false,
         mobile: "reduce",
         reduce: true,
-        menus: [
-          { url: 'users', isActive: 'is-active', icon: 'account' },
-          { url: 'chattings', isActive: '', icon: 'chat' },
-          { url: 'settings', isActive: '', icon: 'cog-outline' }
-        ]
+        menus: this.$store.state.menus.list
       };
     },
     components: {
       VueTalkLeftNavItem
     },
     methods: {
-      selectNavItem: function( url ){
-        vueTalkLeftNavPropsMethods.selectNavItem( this, url );
-        console.log( this.$store.state.menus );
-      },
-      initMenus: function( menus ){
-        let url = window.location.href.split( "http://localhost:3000/" )[1].split( '/' )[0];
-
-        menus.forEach(function( menu ){
-          if( menu.url === url ){
-            menu.isActive = 'is-active';
-          } else {
-            menu.isActive = '';
-          }
-        });
-      }
+      ...mapMutations({
+        initMenus: 'menus/initMenus',
+        selectNavItem: 'menus/selectNavItem'
+      })
     },
-    mounted() {
-      this.initMenus( this.menus );
-    }
+    beforeMount() {
+      this.initMenus();
+    },
 }
 </script>
 <style lang="scss">

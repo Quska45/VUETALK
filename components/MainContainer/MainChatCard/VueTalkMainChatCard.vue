@@ -1,5 +1,9 @@
 <template>
 
+  <div class="card card-chat">
+
+  </div>
+
 </template>
 
 <script>
@@ -8,6 +12,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  .card-chat {
+    height: calc(100% - 64px);
+    position: absolute;
+  }
 </style>
