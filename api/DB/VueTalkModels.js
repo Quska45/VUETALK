@@ -1,3 +1,6 @@
-import { Sequelize } from 'sequelize'
-
 import { User, initUser } from './User';
+
+export default {
+  User,
+  initUser
+}
