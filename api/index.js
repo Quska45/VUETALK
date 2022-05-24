@@ -5,7 +5,11 @@ const app = express();
 
 const sequelize = new Sequelize( 'sqlite::memory' );
 sequelize.sync(); // 테이블 없으면 생성함
-VueTalkModels.initUser( sequelize );
+
+// 테이블 생성
+VueTalkModels.initModels.forEach(function( initModel ){
+  initModel( sequelize );
+});
 
 // 실제로는 /api 라우트를 처리하는 메소드가 된다.
 app.get('/', function(req, res) {

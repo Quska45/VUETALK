@@ -1,5 +1,5 @@
 <template>
-    <a class="panel-block">
+    <a class="panel-block" @click="ClickPanelBlock">
       <span class="panel-icon">
         <i class="fas fa-book" aria-hidden="true"></i>
       </span>
@@ -9,7 +9,12 @@
 
 <script>
 export default {
-  name: "VueTalkRow"
+  name: "VueTalkRow",
+  methods: {
+    ClickPanelBlock: async function(){
+      console.log(await this.$axios.$get('/api'))
+    }
+  }
 }
 </script>
 
