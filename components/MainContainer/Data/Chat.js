@@ -1,7 +1,9 @@
 export class Chat {
-  constructor( id, type, value ) {
-    this.id = id;
-    this.type = type;
-    this.value = value;
+  constructor( toId, fromId, order, text ) {
+    this.toId = toId;
+    this.fromId = fromId;
+    this.order = order;
+    this.text = text;
+
   }
 }

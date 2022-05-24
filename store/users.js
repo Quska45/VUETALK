@@ -1,6 +1,7 @@
 // 데이터 모델
 import { Users } from './SampleData';
 import { User } from '@/components/MainContainer/Data/User';
+import { Chat } from '@/components/MainContainer/Data/Chat';
 
 export const state = () => ({
   users: []
@@ -17,5 +18,9 @@ export const mutations = {
       self.state.users.users.push( user );
     });
   },
+  async initChats() {
+    let self = this;
+    console.log(await this.$axios.$get('/api'))
+  }
 
 }

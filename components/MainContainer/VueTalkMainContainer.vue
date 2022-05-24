@@ -18,7 +18,8 @@ export default {
   },
   methods: {
     ...mapMutations({
-      initUsers: 'users/initUsers'
+      initUsers: 'users/initUsers',
+      initChats: 'users/initChats',
     })
   },
   data: function (){
@@ -29,6 +30,7 @@ export default {
   mounted() {
     // 유저 데이터 세팅
     this.initUsers();
+    this.initChats();
   }
 }
 </script>

@@ -11,6 +11,10 @@ VueTalkModels.initModels.forEach(function( initModel ){
   initModel( sequelize );
 });
 
+import dbRouter from './dbRouter';
+
+app.use('/test', dbRouter);
+
 // 실제로는 /api 라우트를 처리하는 메소드가 된다.
 app.get('/', function(req, res) {
   res.send('API root')
