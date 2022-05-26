@@ -38,8 +38,23 @@ export default {
   // 순서대로 실행 되기 때문에 순서에 대해서 잘 고려되어야 할 필요가 있다.
   modules: [
     'nuxt-buefy',
-    '@nuxtjs/axios/'
+    '@nuxtjs/axios/',
+    'nuxt-socket-io'
   ],
+
+  io: {
+    io: {
+      sockets: [ // Required
+        { // At least one entry is required
+          name: 'home',
+          url: 'http://localhost:3000',
+          default: true,
+          vuex: { /* see section below */ },
+          namespaces: { /* see section below */ }
+        }
+      ]
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
