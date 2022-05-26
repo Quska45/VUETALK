@@ -1,6 +1,5 @@
 <template>
   <div class="container is-fluid">
-    <button @click="initSocket">asdfsd</button>
     <vue-talk-main-card></vue-talk-main-card>
 <!--    <vue-talk-main-card></vue-talk-main-card>-->
     <vue-talk-main-chat-card></vue-talk-main-chat-card>
@@ -10,7 +9,6 @@
 import { mapMutations } from 'vuex';
 import VueTalkMainCard from "./MainCard/VueTalkMainCard";
 import VueTalkMainChatCard from "./MainChatCard/VueTalkMainChatCard";
-import { io } from 'socket.io-client'
 
 export default {
   name: 'VueTalkMainContainer',
@@ -22,7 +20,6 @@ export default {
     ...mapMutations({
       initUsers: 'users/initUsers',
       initChats: 'users/initChats',
-      initSocket: 'socket/initSocket'
     })
   },
   data: function (){
