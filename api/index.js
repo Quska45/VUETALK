@@ -11,11 +11,9 @@ VueTalkModels.initModels.forEach(function( initModel ){
   initModel( sequelize );
 });
 
-import Routers from './router/index';
+import dbRouter from './dbRouter';
 
-Routers.forEach(function( router ){
-  app.use(router.url, router.router);
-})
+app.use('/test', dbRouter);
 
 // 실제로는 /api 라우트를 처리하는 메소드가 된다.
 app.get('/', function(req, res) {
@@ -67,6 +65,14 @@ app.get('/user', function(req, res, next) {
   }).then(function( result ){
     res.json( result );
   });
+});
+
+app.get('/db/:id', function(req, res, next) {
+  let id = req.params.id
+  let tasks = VueTalkModels.User.findAll({
+
+  });
+  console.log('tasks', tasks);
 });
 
 // 모듈로 사용할 수 있도록 export
