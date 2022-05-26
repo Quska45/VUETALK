@@ -21,6 +21,7 @@ export const mutations = {
   async initChats() {
     let self = this;
     console.log(await this.$axios.$get('/api'))
+    console.log(await this.$axios.$get('/socket'));
   }
 
 }
