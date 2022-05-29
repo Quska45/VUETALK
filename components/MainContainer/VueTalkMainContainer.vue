@@ -20,18 +20,45 @@ export default {
     ...mapMutations({
       initUsers: 'users/initUsers',
       initChats: 'users/initChats',
-    })
+    }),
+
+    method1() {
+      /* Emit events */
+      this.socket.emit('method1', {
+        hello: 'world'
+      }, (resp) => {
+        /* Handle response, if any */
+      })
+    }
   },
   data: function (){
     return {
-      cardTitles: [ '친구', '채팅' ]
+      cardTitles: [ '친구', '채팅' ],
+      socket: null
     };
   },
   mounted() {
     // 유저 데이터 세팅
     this.initUsers();
     this.initChats();
-  }
+
+    // this.socket = this.$nuxtSocket({
+    //   name: 'home',
+    //   vuex: { // overrides the vuex opts in the nuxt.config above.
+    //     mutations: ['examples/SET_PROGRESS'],
+    //     actions: ['FORMAT_MESSAGE'],
+    //     emitBacks: ['examples/sample']
+    //   }
+    // })
+
+    this.socket = this.$nuxtSocket({
+      channel: '/index'
+    })
+    /* Listen for events: */
+    this.socket.on('someEvent', (msg, cb) => {
+      /* Handle event */
+    })
+  },
 }
 </script>
 <style>

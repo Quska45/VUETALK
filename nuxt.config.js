@@ -1,4 +1,5 @@
-import { resolve } from 'path';
+import { resolve } from 'path'
+import ioCofing from './io.config'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -41,27 +42,13 @@ export default {
     '@nuxtjs/axios/',
     'nuxt-socket-io'
   ],
-
-  io: {
-    io: {
-      sockets: [ // Required
-        { // At least one entry is required
-          name: 'home',
-          url: 'http://localhost:3000',
-          default: true,
-          vuex: { /* see section below */ },
-          namespaces: { /* see section below */ }
-        }
-      ]
-    }
-  },
+  io: ioCofing,
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
 
   },
   serverMiddleware: [
-    // <project root>/api/index.js 모듈을 미들웨어로 추가
     '~/api/index.js'
   ],
   alias: {
