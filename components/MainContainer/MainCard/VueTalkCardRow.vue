@@ -4,7 +4,10 @@
       {{cardInfo.text}}
     </div>
     <div>
-      <input v-model="cardInfo.text"/>
+      <input 
+        v-model="cardInfo.text"
+        v-on:keyup="inputEnter"
+      />
     </div>
   </div>
 </template>
@@ -16,6 +19,14 @@ export default {
     cardInfo: Object
   },
   methods: {
+    inputEnter(e){
+      console.log(e);
+      if(e.keyCode === 13){
+        console.log('enter');
+      } else {
+        console.log('not enter');
+      }
+    }
   },
 }
 </script>

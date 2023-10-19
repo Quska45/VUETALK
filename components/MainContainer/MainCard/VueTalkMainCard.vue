@@ -7,6 +7,15 @@
         <vue-talk-card-row></vue-talk-card-row>
         <vue-talk-card-row></vue-talk-card-row>
         -->
+        <div>
+          Text : {{cardInfos[0].text}}
+        </div>
+        <div>
+          computedText : {{computedText}}
+        </div>
+        <div>
+          computedId : {{computedId}}
+        </div>
       </div>
   </div>
 </template>
@@ -27,6 +36,14 @@ export default {
   data() {
     return {
 
+    }
+  },
+  computed: {
+    computedText(){
+      return this.cardInfos[0].text;
+    },
+    computedId(){
+      return this.cardInfos[1].id;
     }
   },
   mounted() {
