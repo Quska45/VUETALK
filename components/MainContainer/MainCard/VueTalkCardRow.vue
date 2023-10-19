@@ -1,17 +1,22 @@
 <template>
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-        bulma
-    </a>
+  <div>
+    <div>
+      {{cardInfo.text}}
+    </div>
+    <div>
+      <input v-model="cardInfo.text"/>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "VueTalkRow",
+  props: {
+    cardInfo: Object
+  },
   methods: {
-  }
+  },
 }
 </script>
 

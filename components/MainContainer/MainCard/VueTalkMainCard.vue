@@ -2,8 +2,11 @@
   <div class="card">
       <vue-talk-card-head></vue-talk-card-head>
       <div class="card-container">
+        <vue-talk-card-row v-for="(cardInfo, i) in cardInfos" v-bind:cardInfo="cardInfo"></vue-talk-card-row>
+        <!--
         <vue-talk-card-row></vue-talk-card-row>
         <vue-talk-card-row></vue-talk-card-row>
+        -->
       </div>
   </div>
 </template>
@@ -14,14 +17,21 @@ import VueTalkCardHead from "./VueTalkCardHead";
 
 export default {
   name: "VueTalkMainCard",
+  props: {
+    cardInfos: Array
+  },
   components: {
     VueTalkCardRow,
     VueTalkCardHead
   },
   data() {
     return {
+
     }
   },
+  mounted() {
+    console.log('this.cardInfos', this.cardInfos);
+  }
 }
 </script>
 

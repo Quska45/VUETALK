@@ -1,6 +1,6 @@
 <template>
   <div class="container is-fluid">
-    <vue-talk-main-card></vue-talk-main-card>
+    <vue-talk-main-card v-bind:cardInfos="cardInfos" ></vue-talk-main-card>
 <!--    <vue-talk-main-card></vue-talk-main-card>-->
     <vue-talk-main-chat-card></vue-talk-main-chat-card>
   </div>
@@ -33,8 +33,19 @@ export default {
   },
   data: function (){
     return {
-      cardTitles: [ '친구', '채팅' ],
-      socket: null
+      cardInfos: [
+        {
+          id: 1,
+          name: '카드1',
+          text: '카드1 텍스트'
+        },
+        {
+          id: 2,
+          name: '카드2',
+          text: '카드2 텍스트'
+        },
+      ],
+      socket: null,
     };
   },
   mounted() {
